@@ -51,7 +51,7 @@ export default function CookieStandAdmin({ token, onLogout, username }) {
     }
 
     return (
-        <div>
+        <div className='w-screen'>
             <Head>
                 <title>Cookie Stand Admin</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -59,7 +59,7 @@ export default function CookieStandAdmin({ token, onLogout, username }) {
 
             <CookieStandHeader username={username} onLogout={onLogout}/>
 
-            <main>
+            <main className='w-full'>
                 <CookieStandForm onCreate={createHandler} />
                 <CookieStandTable stands={cookieStands} onDelete={deleteHandler}/>
             </main>

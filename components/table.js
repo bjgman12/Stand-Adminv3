@@ -4,8 +4,8 @@ import { hours } from '../data'
 export default function CookieStandTable({ stands, onDelete }) {
 
     return (
-        <Table>
-            <thead>
+        <Table >
+            <thead className=''>
                 <tr>
 
                     <TH>Location</TH>
@@ -15,14 +15,14 @@ export default function CookieStandTable({ stands, onDelete }) {
                     <TH>Totals</TH>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className=''>
                 {stands.map((stand, i) => {
 
                     return (
-                        <tr key={stand.id}>
+                        <tr   className='odd:bg-green-300' key={stand.id}>
 
                             <TH>
-                                <div>
+                                <div >
 
                                     <p>{stand.location}</p>
 
@@ -34,7 +34,9 @@ export default function CookieStandTable({ stands, onDelete }) {
 
                             {stand.cookiesEachHour.map((amt, i) => (
                                 <TD key={i}>
+                                    <td >
                                     {amt}
+                                    </td>
                                 </TD>
                             ))}
                             <TD>{stand.totalDailyCookies}</TD>
@@ -59,19 +61,19 @@ export default function CookieStandTable({ stands, onDelete }) {
 
 function Table({ children }) {
     return (
-        <table>
+        <table  className='bg-green-500 w-4/5 mx-auto mt-8 border-2 border-green-900 text-center rounded-lg'>
             {children}
         </table>
     );
 }
 function TH({ children }) {
     return (
-        <th>{children}</th>
+        <th className='border-2 border-gray-600'>{children}</th>
     )
 }
 
 function TD({ children }) {
     return (
-        <td>{children}</td>
+        <td className='border-2 border-gray-600 pl-8'>{children}</td>
     )
 }
